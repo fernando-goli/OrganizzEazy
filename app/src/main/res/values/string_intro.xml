@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="intro_1_text">Simples e facil de usar.</string>
+    <string name="intro_2_text">Organize suas contas com a gente.</string>
+    <string name="intro_3_text">Simples e facil de usar 3</string>
+    <string name="intro_4_text">Simples e facil de usar 4</string>
+
+    <string name="intro_img_1">image_intro_1</string>
+    <string name="intro_img_2">image_intro_2</string>
+    <string name="intro_img_3">image_intro_3</string>
+    <string name="intro_img_4">intro_image_4</string>
+
+    <string name="intro_cad">Crie sua conta gratis</string>
+    <string name="intro_cad_1">Junte-se a mais de meio milhão \nde pessoas e começe já</string>
+    <string name="intro_cad_btn">Cadastre-se</string>
+    <string name="intro_cad_login">Já tenho conta</string>
+
+
+</resources>
