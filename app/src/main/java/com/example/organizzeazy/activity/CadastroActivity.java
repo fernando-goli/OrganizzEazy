@@ -55,19 +55,13 @@ public class CadastroActivity extends AppCompatActivity {
                             usuario.setEmail(textEmail);
                             usuario.setSenha(textSenha);
                             cadastraUsuario();
-
-
                     }else{
-
                         Toast.makeText(CadastroActivity.this, "Preencha o senha", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-
                     Toast.makeText(CadastroActivity.this, "Preencha o email", Toast.LENGTH_SHORT).show();
-
                 }
             }else{
-
                 Toast.makeText(CadastroActivity.this, "Preencha o nome", Toast.LENGTH_SHORT).show();
             }
         }
@@ -85,6 +79,7 @@ public class CadastroActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     Toast.makeText(CadastroActivity.this, "Sucesso ao cadastrar usuario", Toast.LENGTH_SHORT).show();
+                    finish();
                 }else{
                     String excecao = "";
 
