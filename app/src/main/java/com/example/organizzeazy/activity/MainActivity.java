@@ -74,6 +74,7 @@ public class MainActivity extends IntroActivity {
 
     public void verifyUserLogged(){
         mAuth = ConfigFirebase.getFirebaseAuth();
+        //mAuth.signOut();
         //recupera usuario atual e verifica
         if ( mAuth.getCurrentUser() != null ){
             openHomeActy();

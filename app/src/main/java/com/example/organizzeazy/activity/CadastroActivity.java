@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.organizzeazy.R;
 import com.example.organizzeazy.config.ConfigFirebase;
+import com.example.organizzeazy.helper.Base64Custom;
 import com.example.organizzeazy.model.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -78,8 +79,13 @@ public class CadastroActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
+
+                    String idUsuario = Base64Custom.codificarBase64( usuario.getEmail() );
+                    usuario.setIdUsuario(idUsuario);
+                    usuario.salvar();
                     Toast.makeText(CadastroActivity.this, "Sucesso ao cadastrar usuario", Toast.LENGTH_SHORT).show();
                     finish();
+
                 }else{
                     String excecao = "";
 
@@ -101,8 +107,8 @@ public class CadastroActivity extends AppCompatActivity {
                 }
             }
         });
-
-
     }
+
+
 
 }
