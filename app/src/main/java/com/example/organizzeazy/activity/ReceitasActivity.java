@@ -64,12 +64,14 @@ public class ReceitasActivity extends AppCompatActivity {
             Double receitaAtualizada = receitaTotal + valorDigitado;
             atualizarReceita( receitaAtualizada );
             movimentation.salvar( data );
+
+            finish();
         }
 
     }
 
     public Boolean validateValues(){
-       
+
         String textoValor = campoValor.getText().toString();
         String textoData = campoData.getText().toString();
         String textoCategoria = campoCategoria.getText().toString();
@@ -98,14 +100,6 @@ public class ReceitasActivity extends AppCompatActivity {
         }
 
     }
-
-    /*
-        case :
-        case :
-        case :
-        case :
-        case :
-     */
 
     public void recuperarReceitas(){
         String emailUser = mAuth.getCurrentUser().getEmail();

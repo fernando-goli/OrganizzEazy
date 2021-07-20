@@ -1,5 +1,7 @@
 package com.example.organizzeazy.model;
 
+import androidx.annotation.Nullable;
+
 import com.example.organizzeazy.config.ConfigFirebase;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Exclude;

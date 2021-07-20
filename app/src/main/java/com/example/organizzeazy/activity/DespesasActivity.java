@@ -48,7 +48,6 @@ public class DespesasActivity extends AppCompatActivity {
 
     }
 
-
     public void salvarDespesa(View view){
 
         if (validateValues() ){
@@ -66,8 +65,9 @@ public class DespesasActivity extends AppCompatActivity {
             Double despesaAtualizada = despesaTotal + valorDigitado;
             atualizarDespesa( despesaAtualizada );
             movimentation.salvar( data );
-        }
 
+            finish();
+        }
     }
 
     public Boolean validateValues(){
@@ -98,22 +98,12 @@ public class DespesasActivity extends AppCompatActivity {
             Toast.makeText(DespesasActivity.this, "Preencha o valor", Toast.LENGTH_SHORT).show();
             return false;
         }
-
     }
-
-    /*
-        case :
-        case :
-        case :
-        case :
-        case :
-     */
 
     public void recuperarDespesas(){
         String emailUser = mAuth.getCurrentUser().getEmail();
         String idUser = Base64Custom.codificarBase64(emailUser);
-        DatabaseReference userRef = firebaseRef.child("usuarios")
-            .child( idUser );
+        DatabaseReference userRef = firebaseRef.child("usuarios").child( idUser );
         userRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -127,7 +117,6 @@ public class DespesasActivity extends AppCompatActivity {
             }
         });
     }
-
 
     public void atualizarDespesa(Double despesa){
         String emailUser = mAuth.getCurrentUser().getEmail();
