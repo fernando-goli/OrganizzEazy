@@ -1,5 +1,4 @@
 # OrganizzEazy
-OrganizzEazy é um aplicativo clone de controle financeiro basico, primeiro app completo do curso de android em java.
-App conta integração com firebase para autenticação e realtime database. 
+OrganizzEazy é um aplicativo clone de controle financeiro basico, primeiro app completo do curso de android em java, integra os principais conhecimentos passados no curso até o momento.
 
-Atualmente possui tela de cadastro, login, tela principal, registro de receitas e despesas.
+App conta integração com firebase para autenticação e database. Atualmente possui cadastro, login, tela principal com resumo financeiro e registro de receitas e despesas.
