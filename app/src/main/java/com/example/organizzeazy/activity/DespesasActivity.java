@@ -54,16 +54,17 @@ public class DespesasActivity extends AppCompatActivity {
 
             movimentation = new Movimentation();
             String data = campoData.getText().toString();
-            Double valorDigitado = Double.parseDouble( campoValor.getText().toString() );
+            Double valorRecuperado = Double.parseDouble(campoValor.getText().toString());
 
-            movimentation.setValor( valorDigitado );
+            movimentation.setValor( valorRecuperado );
             movimentation.setCategoria( campoCategoria.getText().toString());
             movimentation.setDescricao( campoDescricao.getText().toString());
             movimentation.setData( data );
             movimentation.setTipo( "d" );
 
-            Double despesaAtualizada = despesaTotal + valorDigitado;
+            Double despesaAtualizada = despesaTotal + valorRecuperado;
             atualizarDespesa( despesaAtualizada );
+
             movimentation.salvar( data );
 
             finish();
@@ -104,6 +105,7 @@ public class DespesasActivity extends AppCompatActivity {
         String emailUser = mAuth.getCurrentUser().getEmail();
         String idUser = Base64Custom.codificarBase64(emailUser);
         DatabaseReference userRef = firebaseRef.child("usuarios").child( idUser );
+
         userRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -121,8 +123,7 @@ public class DespesasActivity extends AppCompatActivity {
     public void atualizarDespesa(Double despesa){
         String emailUser = mAuth.getCurrentUser().getEmail();
         String idUser = Base64Custom.codificarBase64(emailUser);
-        DatabaseReference userRef = firebaseRef.child("usuarios")
-            .child( idUser );
+        DatabaseReference userRef = firebaseRef.child("usuarios").child( idUser );
 
         userRef.child("despesaTotal").setValue(despesa);
     }

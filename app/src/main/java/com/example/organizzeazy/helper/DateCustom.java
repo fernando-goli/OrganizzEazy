@@ -15,13 +15,12 @@ public class DateCustom {
 
     public static String mounthYearSelect(String data){
 
-        String dataRege[] = data.split("/");
-        String dia= dataRege[0];
-        String mes = dataRege[1];
-        String ano = dataRege[2];
+        String retornoData[] = data.split("/");
+        String dia = retornoData[0];//dia 23
+        String mes = retornoData[1];//mes 01
+        String ano = retornoData[2];//ano 2018
 
         String mesAno = mes + ano;
-
         return mesAno;
     }
 

@@ -13,17 +13,17 @@ public class Movimentation {
     private String descricao;
     private String tipo;
     private Double valor;
+    private String key;
 
     public Movimentation() {
     }
 
 
-    public void salvar(String data){
+    public void salvar(String dataSelect){
 
         FirebaseAuth auth = ConfigFirebase.getFirebaseAuth();
         String idUsuario = Base64Custom.codificarBase64( auth.getCurrentUser().getEmail());
-
-        String mesAno = DateCustom.mounthYearSelect(data);
+        String mesAno = DateCustom.mounthYearSelect(dataSelect);
         DatabaseReference reference = ConfigFirebase.getFirebaseDatabase();
         reference.child("movimentation")
             .child(idUsuario)
@@ -32,7 +32,17 @@ public class Movimentation {
             .setValue(this);
     }
 
-    public String getData() { return data; }
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public String getData() {
+        return data;
+    }
 
     public void setData(String data) { this.data = data; }
 
